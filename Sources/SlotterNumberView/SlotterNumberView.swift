@@ -30,6 +30,11 @@ public struct SlotterNumberView: View {
 			.compactMap { $0.wholeNumberValue }
 	}
 
+	public init(number: Binding<Int>, animationDuration: Double = 0.3) {
+		self._number = number
+		self.animationDuration = animationDuration
+	}
+
 	public var body: some View {
 		HStack {
 			ForEach(0..<digits.count, id: \.self) { index in
